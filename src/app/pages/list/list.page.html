@@ -1,0 +1,28 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Productos</ion-title>
+  </ion-toolbar>
+
+<ion-content>
+
+  <!-- <ion-searchbar
+      showcancelbutton=""
+      (ionInput)="filterList($event)"
+    ></ion-searchbar> -->
+
+  <div *ngFor="let producto of productos | async">
+    <ion-item (click)="editar(producto)">
+      <ion-avatar slot="start">
+        <img src="./avatar-finn.png">
+      </ion-avatar>
+      <ion-label>
+        <h2>{{producto.name}}</h2>
+        <h3>{{producto.cost}}</h3>
+      </ion-label>
+    </ion-item>
+  </div>
+
+</ion-content>
